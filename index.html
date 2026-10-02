@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiscale beslisbomen</title>
+<meta name="description" content="Toetsvragen met onderbouwing voor de schenk- en erfbelasting en het formele belastingrecht.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F3F5F8; --surface:#FFFFFF; --sunk:#E8ECF2; --line:#D3DAE4;
+  --ink:#1A2433; --muted:#566377; --faint:#8793A4; --accent:#1F4E86; --accent-ink:#FFFFFF; --accent-soft:#E3ECF7;
+  --concl:#1E6B55; --concl-bg:#E4F2EC; --warn:#8A5A00; --warn-bg:#FBF0D9;
+  --jur:#1F4E86; --jur-bg:#E3ECF7; --wet:#5B3E8C; --wet-bg:#EDE7F6;
+  --focus:#E08A00;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#10151D; --surface:#18202B; --sunk:#202A37; --line:#2E3A4A;
+    --ink:#E4E9F0; --muted:#9AA7B8; --faint:#6F7C8E; --accent:#6FA3E0; --accent-ink:#0C1522; --accent-soft:#1C2B40;
+    --concl:#6CCBA8; --concl-bg:#15302A; --warn:#E8B55A; --warn-bg:#33280F;
+    --jur:#8DB8EC; --jur-bg:#1C2B40; --wet:#BBA2E6; --wet-bg:#2A2140;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#10151D; --surface:#18202B; --sunk:#202A37; --line:#2E3A4A;
+  --ink:#E4E9F0; --muted:#9AA7B8; --faint:#6F7C8E; --accent:#6FA3E0; --accent-ink:#0C1522; --accent-soft:#1C2B40;
+  --concl:#6CCBA8; --concl-bg:#15302A; --warn:#E8B55A; --warn-bg:#33280F;
+  --jur:#8DB8EC; --jur-bg:#1C2B40; --wet:#BBA2E6; --wet-bg:#2A2140;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:20px 48px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:20px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+button,select,input{font:inherit;color:inherit}
+.eyebrow{font:500 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:600 26px/1.2 var(--serif);margin:6px 0 0;text-wrap:balance}
+.meta{color:var(--muted);font-size:14px;margin-top:4px;max-width:70ch}
+header.site{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.crumbs{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.chip{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--mono);padding:5px 8px;border-radius:999px;background:var(--sunk);color:var(--ink);white-space:nowrap}
+.chip.concept{background:var(--warn-bg);color:var(--warn)}
+.chip.def{background:var(--concl-bg);color:var(--concl)}
+
+/* ---------- home ---------- */
+.home{display:grid;grid-template-columns:250px 1fr;gap:28px;align-items:start}
+@media (max-width:760px){.home{grid-template-columns:1fr}}
+nav.menu{display:grid;gap:14px;position:sticky;top:16px}
+@media (max-width:760px){nav.menu{position:static}}
+.menu h2{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.menu ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.menu .top{font-weight:600;font-size:14px}
+.menu button{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:8px;width:100%;box-sizing:border-box;padding:6px 10px;border-radius:6px}
+.menu button:hover{background:var(--sunk)}
+.menu button[aria-current="true"]{background:var(--accent-soft);color:var(--accent)}
+.menu button:focus-visible{outline:2px solid var(--focus)}
+.menu .sub button{padding-left:22px;font-size:14px}
+.menu .n{font:400 12px/1.6 var(--mono);color:var(--faint)}
+.menu .empty button{color:var(--faint)}
+.search{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.search input{flex:1 1 260px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.list{display:grid;gap:22px}
+.group h3{font:600 17px/1.3 var(--serif);margin:0 0 10px}
+.group h3 span{font:400 13px var(--sans);color:var(--muted)}
+.rows{display:grid;gap:10px}
+.row{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:start}
+.row:hover{border-color:var(--accent)}
+.row:focus-visible{outline:2px solid var(--focus)}
+@media (max-width:560px){.row{grid-template-columns:1fr}}
+.row .rid{font:600 13px/1.5 var(--mono);color:var(--accent)}
+.row .rt{font:500 16px/1.35 var(--serif)}
+.row .rq{font-size:13.5px;color:var(--muted);margin-top:3px;max-width:70ch}
+.row .rm{display:grid;gap:6px;justify-items:end}
+@media (max-width:560px){.row .rm{justify-items:start}}
+.cov{font:400 12px/1.4 var(--mono);color:var(--muted);white-space:nowrap}
+.bar{width:120px;height:5px;border-radius:3px;background:var(--sunk);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent)}
+.none{color:var(--muted);font-size:14px;background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:14px 18px}
+
+/* ---------- tree ---------- */
+.tabs{display:flex;gap:4px;background:var(--sunk);padding:4px;border-radius:8px;width:max-content;max-width:100%;flex-wrap:wrap}
+.tabs button{border:0;background:transparent;padding:6px 14px;border-radius:6px;cursor:pointer;color:var(--muted);font-weight:500}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.treehead{display:grid;gap:10px}
+.treehead .line{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+@media (max-width:760px){.layout{grid-template-columns:1fr}}
+.route h2,.panel h2{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.step{display:grid;grid-template-columns:auto 1fr;gap:10px;padding:8px 0 8px 12px;border-left:2px solid var(--line);margin-left:6px;position:relative}
+.step::before{content:"";position:absolute;left:-6px;top:13px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--line)}
+.step.done::before{background:var(--accent);border-color:var(--accent)}
+.step.concl::before{background:var(--concl);border-color:var(--concl)}
+.step.now::before{border-color:var(--accent)}
+.step .id{font:500 12px/1.4 var(--mono);color:var(--muted);min-width:24px}
+.step button{all:unset;cursor:pointer;display:block}
+.step button:hover .q{text-decoration:underline}
+.step button:focus-visible{outline:2px solid var(--focus)}
+.step .q{font-size:13px;line-height:1.4}
+.step .a{font-size:12px;color:var(--accent);font-weight:500;margin-top:2px}
+.main{display:grid;gap:16px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card.is-concl{border-color:var(--concl);box-shadow:inset 4px 0 0 var(--concl)}
+.nodehead{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.nid{font:600 12px/1 var(--mono);background:var(--sunk);padding:4px 7px;border-radius:4px}
+.kind{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.card.is-concl .kind{color:var(--concl)}
+.question{font:500 21px/1.35 var(--serif);margin:0;text-wrap:balance;max-width:62ch}
+.concltext{font-size:16px;line-height:1.6;margin:0;max-width:68ch}
+.toel{color:var(--muted);font-size:14px;margin:10px 0 0;max-width:68ch}
+.opts,.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.opt{border:1.5px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:500;text-align:left;max-width:100%}
+.opt:hover{background:var(--accent);color:var(--accent-ink)}
+.opt.primary{background:var(--accent);color:var(--accent-ink)}
+.ghost{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:14px}
+.ghost:hover{border-color:var(--accent)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 22px}
+.srcs{display:grid;gap:12px}
+.src{display:grid;gap:4px;padding-top:12px;border-top:1px solid var(--line)}
+.src:first-child{border-top:0;padding-top:0}
+.srchead{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.badge{font:600 10.5px/1 var(--mono);letter-spacing:.06em;padding:4px 6px;border-radius:4px}
+.b-JUR{background:var(--jur-bg);color:var(--jur)}
+.b-WET{background:var(--wet-bg);color:var(--wet)}
+.b-SPEC{background:var(--warn-bg);color:var(--warn)}
+.b-BELEID,.b-LIT{background:var(--sunk);color:var(--ink)}
+.vp{font-weight:500;font-size:14px}
+.ecli{font:400 12.5px/1.4 var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.src p{margin:0;font-size:14px;max-width:72ch}
+.note{font-size:13px;color:var(--muted);border-left:2px solid var(--line);padding-left:10px}
+.note b{color:var(--ink);font-weight:500}
+.ver{font:400 12px/1.4 var(--mono);color:var(--muted);margin-top:12px}
+.speconly{font-size:14px;color:var(--muted);margin:0}
+.overview{display:grid;gap:10px}
+.ovnode{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:start}
+@media (max-width:560px){.ovnode{grid-template-columns:44px 1fr}.ovnode .srcsum{grid-column:2}}
+.ovnode.c{box-shadow:inset 3px 0 0 var(--concl)}
+.ovnode .t{font-size:14px}
+.ovnode .edges{font:400 12px/1.5 var(--mono);color:var(--muted);margin-top:4px}
+.ovnode .edges button{all:unset;color:var(--accent);cursor:pointer}
+.srcsum{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);align-items:center;margin-bottom:12px}
+.hist{display:grid;gap:0}
+.hist .h{display:grid;grid-template-columns:120px 160px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
+.hist .h:first-child{border-top:0}
+@media (max-width:560px){.hist .h{grid-template-columns:1fr}}
+.hist .hv{font:500 13px/1.5 var(--mono)}
+.hist .hd{font:400 13px/1.5 var(--mono);color:var(--muted)}
+.toast{font-size:13px;color:var(--concl)}
+.err{background:var(--warn-bg);color:var(--warn);padding:14px;border-radius:8px}
+textarea.copyfb{width:100%;min-height:160px;font:12px/1.5 var(--mono);background:var(--sunk);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:10px}
+footer{border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.card{animation:in .18s ease-out}@keyframes in{from{transform:translateY(4px)}to{transform:none}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <div>
+      <div class="crumbs" id="crumbs"><span class="eyebrow">Beslisbomen</span></div>
+      <h1 id="pageTitle">Fiscale beslisbomen</h1>
+      <div class="meta" id="pageMeta"></div>
+    </div>
+    <div id="headRight"></div>
+  </header>
+
+  <!-- HOME -->
+  <section id="viewHome" class="home" hidden>
+    <nav class="menu" aria-label="Onderwerpen">
+      <h2>Onderwerpen</h2>
+      <ul id="menu"></ul>
+    </nav>
+    <div style="display:grid;gap:18px;min-width:0">
+      <div class="search">
+        <label for="q" class="eyebrow">Zoeken</label>
+        <input id="q" type="search" placeholder="Zoek op titel, trefwoord of artikel (bijv. retourpost, art. 3:41 Awb)">
+      </div>
+      <div class="list" id="list"></div>
+    </div>
+  </section>
+
+  <!-- TREE -->
+  <section id="viewTree" hidden>
+    <div class="treehead" style="margin-bottom:18px">
+      <div class="line">
+        <div class="tabs" role="tablist">
+          <button id="tabDoorlopen" role="tab" aria-selected="true">Doorlopen</button>
+          <button id="tabOverzicht" role="tab" aria-selected="false">Overzicht</button>
+          <button id="tabVersies" role="tab" aria-selected="false">Versies</button>
+        </div>
+      </div>
+    </div>
+    <div id="paneDoorlopen" class="layout">
+      <aside class="route" aria-label="Doorlopen route"><h2>Route</h2><div id="route"></div></aside>
+      <div class="main"><div id="nodeCard"></div><div class="panel" id="srcPanel"></div></div>
+    </div>
+    <div id="paneOverzicht" hidden>
+      <div class="legend">
+        <span><span class="badge b-JUR">JUR</span> rechtspraak</span>
+        <span><span class="badge b-WET">WET</span> wetgeving</span>
+        <span><span class="badge b-BELEID">BELEID</span> beleid</span>
+        <span><span class="badge b-SPEC">SPEC</span> oordeel specialist</span>
+      </div>
+      <div class="overview" id="overview"></div>
+    </div>
+    <div id="paneVersies" class="panel" hidden><h2>Versiegeschiedenis</h2><div class="hist" id="hist"></div></div>
+  </section>
+
+  <footer id="foot">Onderbouwing per knooppunt: JUR (rechtspraak), WET (wetgeving), BELEID, LIT (literatuur) of SPEC (oordeel van de specialist, nog zonder bronverwijzing).</footer>
+</div>
+
+<script>
+const S = { idx:null, trees:{}, topic:null, q:"", boom:null, nodes:{}, path:[], cur:null };
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MAAND = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
+const fmtDate = d => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d||""); return m ? `${+m[3]} ${MAAND[+m[2]-1]} ${m[1]}` : (d||""); };
+const isConcept = v => /concept/i.test(v||"") || /^0\./.test(v||"");
+const verChip = t => `<span class="chip ${isConcept(t.versie)?"concept":"def"}">versie ${esc(t.versie)} · ${esc(fmtDate(t.datum))}</span>`;
+const short = (t, max=90) => { t = String(t||""); return t.length > max ? t.slice(0, max-1).trimEnd() + "…" : t; };
+
+function topicsFlat(){
+  const out = [];
+  for (const o of S.idx.onderwerpen){ out.push({...o, parent:null}); for (const s of (o.sub||[])) out.push({...s, parent:o.id}); }
+  return out;
+}
+const topicById = id => topicsFlat().find(t => t.id === id);
+function treesIn(topicId){
+  const t = topicById(topicId); if (!t) return [];
+  const ids = t.parent ? [t.id] : [t.id, ...(t.sub||[]).map(s=>s.id)];
+  return S.idx.bomen.filter(b => ids.includes(b.onderwerp));
+}
+
+async function init(){
+  try{ S.idx = await (await fetch("data/index.json", {cache:"no-cache"})).json(); }
+  catch(e){ $("list").innerHTML = '<div class="err">De index van beslisbomen (data/index.json) kon niet worden geladen.</div>'; show("home"); return; }
+  await Promise.all(S.idx.bomen.map(async b => {
+    try{ S.trees[b.id] = await (await fetch(b.bestand, {cache:"no-cache"})).json(); }catch(e){ S.trees[b.id] = null; }
+  }));
+  $("q").addEventListener("input", e => { S.q = e.target.value.trim().toLowerCase(); renderList(); });
+  window.addEventListener("hashchange", route);
+  route();
+}
+function route(){
+  const h = decodeURIComponent((location.hash||"").slice(1));
+  if (h && S.trees[h]) openTree(h); else home();
+}
+function show(v){ $("viewHome").hidden = v!=="home"; $("viewTree").hidden = v!=="tree"; }
+
+/* ---------- home ---------- */
+function home(){
+  show("home");
+  $("pageTitle").textContent = S.idx.titel;
+  $("pageMeta").textContent = S.idx.ondertitel || "";
+  $("crumbs").innerHTML = `<span class="eyebrow">Beslisbomen</span>`;
+  const dates = Object.values(S.trees).filter(Boolean).map(t=>t.datum).sort();
+  $("headRight").innerHTML = `<span class="chip">${S.idx.bomen.length} ${S.idx.bomen.length===1?"beslisboom":"beslisbomen"}${dates.length?` · bijgewerkt ${esc(fmtDate(dates[dates.length-1]))}`:""}</span>`;
+  document.title = S.idx.titel;
+  renderMenu(); renderList();
+}
+function renderMenu(){
+  const item = (t, cls) => {
+    const n = treesIn(t.id).length;
+    return `<li class="${cls} ${n?"":"empty"}"><button data-topic="${esc(t.id)}" aria-current="${S.topic===t.id}"><span>${esc(t.titel)}</span><span class="n">${n}</span></button></li>`;
+  };
+  let h = `<li class="top"><button data-topic="" aria-current="${!S.topic}"><span>Alle onderwerpen</span><span class="n">${S.idx.bomen.length}</span></button></li>`;
+  for (const o of S.idx.onderwerpen){
+    h += item(o, "top");
+    for (const s of (o.sub||[])) h += item(s, "sub");
+  }
+  $("menu").innerHTML = h;
+  $("menu").querySelectorAll("button").forEach(b => b.onclick = () => { S.topic = b.dataset.topic || null; renderMenu(); renderList(); });
+}
+function coverage(t){
+  const nodes = t.knooppunten || [];
+  const withSrc = nodes.filter(n => (n.onderbouwing||[]).some(s => s.soort !== "SPEC")).length;
+  return { withSrc, total: nodes.length };
+}
+function matches(b){
+  if (!S.q) return true;
+  const t = S.trees[b.id] || {};
+  const hay = [b.id, t.titel, t.kernvraag, t.scope, ...(b.trefwoorden||[])].join(" ").toLowerCase();
+  return S.q.split(/\s+/).every(w => hay.includes(w));
+}
+function rowHtml(b){
+  const t = S.trees[b.id];
+  if (!t) return `<div class="none">${esc(b.id)}: bestand ${esc(b.bestand)} kon niet worden geladen.</div>`;
+  const c = coverage(t); const pct = c.total ? Math.round(100*c.withSrc/c.total) : 0;
+  return `<button class="row" data-id="${esc(b.id)}">
+    <span class="rid">${esc(b.id)}</span>
+    <span><span class="rt">${esc(t.titel)}</span><span class="rq" style="display:block">${esc(t.kernvraag||"")}</span></span>
+    <span class="rm">${verChip(t)}<span class="cov">${c.withSrc} van ${c.total} knooppunten met bronnen</span><span class="bar" aria-hidden="true"><i style="width:${pct}%"></i></span></span>
+  </button>`;
+}
+function renderList(){
+  const groups = [];
+  const scope = S.topic ? [topicById(S.topic)] : S.idx.onderwerpen;
+  for (const top of scope){
+    const subs = top.parent ? [top] : (top.sub||[]);
+    const sections = [];
+    // bomen direct onder hoofdonderwerp
+    if (!top.parent){
+      const direct = S.idx.bomen.filter(b => b.onderwerp === top.id && matches(b));
+      if (direct.length) sections.push({titel:null, bomen:direct});
+    }
+    for (const s of subs){
+      const bs = S.idx.bomen.filter(b => b.onderwerp === s.id && matches(b));
+      if (bs.length) sections.push({titel:s.titel, bomen:bs});
+    }
+    const parentTitel = top.parent ? topicById(top.parent).titel : top.titel;
+    for (const sec of sections){
+      groups.push(`<div class="group"><h3>${esc(parentTitel)}${sec.titel && !top.parent ? ` <span>› ${esc(sec.titel)}</span>` : (top.parent ? ` <span>› ${esc(top.titel)}</span>` : "")}</h3><div class="rows">${sec.bomen.map(rowHtml).join("")}</div></div>`);
+    }
+  }
+  $("list").innerHTML = groups.length ? groups.join("") :
+    `<div class="none">${S.q ? "Geen beslisbomen gevonden voor deze zoekterm." : "Voor dit onderwerp zijn nog geen beslisbomen opgesteld."}</div>`;
+  $("list").querySelectorAll(".row").forEach(r => r.onclick = () => { location.hash = r.dataset.id; });
+}
+
+/* ---------- tree ---------- */
+function openTree(id){
+  S.boom = S.trees[id];
+  S.nodes = Object.fromEntries(S.boom.knooppunten.map(n => [n.id, n]));
+  show("tree");
+  const meta = S.idx.bomen.find(b => b.id === id);
+  const tp = topicById(meta.onderwerp);
+  const parent = tp && tp.parent ? topicById(tp.parent) : null;
+  $("crumbs").innerHTML = `<a href="#">Beslisbomen</a>${parent?` <span>›</span> <span>${esc(parent.titel)}</span>`:""}${tp?` <span>›</span> <span>${esc(tp.titel)}</span>`:""} <span>›</span> <span class="eyebrow">${esc(S.boom.id)}</span>`;
+  $("pageTitle").textContent = S.boom.titel;
+  $("pageMeta").textContent = S.boom.kernvraag || "";
+  $("headRight").innerHTML = verChip(S.boom);
+  document.title = `${S.boom.id} ${S.boom.titel}`;
+  showTab("Doorlopen");
+  S.path = []; go(S.boom.start);
+  renderOverview(); renderHist();
+}
+function go(id){ S.cur = id; render(); }
+function choose(label, to){ S.path.push({ id: S.cur, antwoord: label }); go(to); }
+function jumpBack(i){ const step = S.path[i]; S.path = S.path.slice(0, i); go(step.id); }
+
+function render(){
+  const n = S.nodes[S.cur];
+  const items = S.path.map((p, i) => {
+    const pn = S.nodes[p.id];
+    return `<div class="step ${pn.type==="conclusie"?"concl":"done"}"><span class="id">${esc(pn.id)}</span>
+      <button data-back="${i}" title="Terug naar ${esc(pn.id)}"><div class="q">${esc(short(pn.tekst))}</div><div class="a">${esc(p.antwoord)}</div></button></div>`;
+  });
+  items.push(`<div class="step now"><span class="id">${esc(n.id)}</span><div><div class="q"><b>${esc(short(n.tekst))}</b></div></div></div>`);
+  $("route").innerHTML = items.join("");
+  $("route").querySelectorAll("[data-back]").forEach(b => b.onclick = () => jumpBack(+b.dataset.back));
+
+  const isC = n.type === "conclusie";
+  let body = isC ? `<p class="concltext">${esc(n.tekst)}</p>` : `<p class="question">${esc(n.tekst)}</p>`;
+  if (n.toelichting) body += `<p class="toel">${esc(n.toelichting)}</p>`;
+  if (!isC){
+    body += `<div class="opts">${n.opties.map(o => `<button class="opt" data-l="${esc(o.label)}" data-t="${esc(o.naar)}">${esc(o.label)}</button>`).join("")}</div>`;
+  } else {
+    body += `<div class="actions">`;
+    if (n.vervolg) body += `<button class="opt primary" data-l="Verder" data-t="${esc(n.vervolg)}">Verder naar ${esc(n.vervolg)}: ${esc(short(S.nodes[n.vervolg].tekst, 60))}</button>`;
+    body += `<button class="ghost" id="copyBtn">Kopieer route voor dossier</button><span class="toast" id="toast" aria-live="polite"></span></div><div id="copyWrap"></div>`;
+  }
+  if (S.path.length) body += `<div class="actions"><button class="ghost" id="prevBtn">← Vorige vraag</button><button class="ghost" id="restartBtn">Opnieuw beginnen</button></div>`;
+  $("nodeCard").innerHTML = `<div class="card ${isC?"is-concl":""}"><div class="nodehead"><span class="nid">${esc(n.id)}</span><span class="kind">${isC?"Conclusie":"Toetsvraag"}</span></div>${body}</div>`;
+  $("nodeCard").querySelectorAll("button.opt").forEach(b => b.onclick = () => choose(b.dataset.l, b.dataset.t));
+  if ($("copyBtn")) $("copyBtn").onclick = copyRoute;
+  if ($("prevBtn")) $("prevBtn").onclick = () => jumpBack(S.path.length-1);
+  if ($("restartBtn")) $("restartBtn").onclick = () => { S.path = []; go(S.boom.start); };
+  $("srcPanel").innerHTML = `<h2>Onderbouwing ${esc(n.id)}</h2>${srcHtml(n)}`;
+}
+function srcHtml(n){
+  const list = n.onderbouwing || [];
+  const real = list.filter(s => s.soort !== "SPEC");
+  let h = "";
+  if (!real.length){
+    h += `<p class="speconly"><span class="badge b-SPEC">SPEC</span> Oordeel van de specialist; bronnen kunnen later worden toegevoegd.</p>`;
+  } else {
+    h += `<div class="srcs">` + list.map(s => {
+      if (s.soort === "SPEC") return `<div class="src"><div class="srchead"><span class="badge b-SPEC">SPEC</span><span class="vp">${esc(s.betreft ? "Oordeel specialist: " + s.betreft : "Oordeel specialist")}</span></div></div>`;
+      const title = s.vindplaats || s.ref || "";
+      const ecli = s.ecli ? `<div class="ecli">${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.ecli)}</a>` : esc(s.ecli)}${s.ro ? " · r.o. " + esc(s.ro) : ""}</div>` : (s.ro ? `<div class="ecli">r.o. ${esc(s.ro)}</div>` : "");
+      return `<div class="src"><div class="srchead"><span class="badge b-${esc(s.soort)}">${esc(s.soort)}</span><span class="vp">${esc(title)}</span></div>${ecli}
+        ${s.kern ? `<p>${esc(s.kern)}</p>` : ""}
+        ${s.betekenis_voor_boom ? `<p class="note"><b>Voor deze boom:</b> ${esc(s.betekenis_voor_boom)}</p>` : ""}
+        ${s.opmerking ? `<p class="note"><b>Let op:</b> ${esc(s.opmerking)}</p>` : ""}</div>`;
+    }).join("") + `</div>`;
+  }
+  if (n.verificatie) h += `<div class="ver">Verificatie: ${esc(n.verificatie)}</div>`;
+  return h;
+}
+function routeText(){
+  const lines = [`${S.boom.id} ${S.boom.titel} (versie ${S.boom.versie}, ${fmtDate(S.boom.datum)})`, ""];
+  for (const p of [...S.path, { id: S.cur }]){
+    const n = S.nodes[p.id];
+    lines.push(`${n.id}${n.type==="conclusie"?" [conclusie]":""} ${n.tekst}`);
+    if (p.antwoord) lines.push(`   → ${p.antwoord}`);
+    const src = (n.onderbouwing||[]).map(s => s.soort === "SPEC" ? "SPEC" : [s.vindplaats || s.ref, s.ecli, s.ro ? "r.o. " + s.ro : ""].filter(Boolean).join(", "));
+    if (src.length) lines.push(`   Bron: ${src.join("; ")}`);
+  }
+  return lines.join("\n");
+}
+async function copyRoute(){
+  const txt = routeText();
+  try{ await navigator.clipboard.writeText(txt); $("toast").textContent = "Route gekopieerd"; }
+  catch(e){
+    $("copyWrap").innerHTML = `<p class="toel">Kopiëren lukte niet automatisch. Selecteer de tekst hieronder.</p><textarea class="copyfb" readonly></textarea>`;
+    const ta = $("copyWrap").querySelector("textarea"); ta.value = txt; ta.focus(); ta.select();
+  }
+}
+function renderOverview(){
+  $("overview").innerHTML = S.boom.knooppunten.map(n => {
+    const edges = (n.opties||[]).map(o => `${esc(o.label)} → <button data-go="${esc(o.naar)}">${esc(o.naar)}</button>`)
+      .concat(n.vervolg ? [`vervolg → <button data-go="${esc(n.vervolg)}">${esc(n.vervolg)}</button>`] : []);
+    const kinds = [...new Set((n.onderbouwing||[]).map(s => s.soort))];
+    return `<div class="ovnode ${n.type==="conclusie"?"c":""}"><span class="nid">${esc(n.id)}</span>
+      <div><div class="t">${esc(n.tekst)}</div>${edges.length?`<div class="edges">${edges.join(" · ")}</div>`:""}</div>
+      <div class="srcsum">${kinds.map(k => `<span class="badge b-${esc(k)}">${esc(k)}</span>`).join("")}</div></div>`;
+  }).join("");
+  $("overview").querySelectorAll("[data-go]").forEach(a => a.onclick = () => { S.path = []; showTab("Doorlopen"); go(a.dataset.go); });
+}
+function renderHist(){
+  const h = (S.boom.versiegeschiedenis||[]).slice().reverse();
+  $("hist").innerHTML = h.length ? h.map(v => `<div class="h"><span class="hv">${esc(v.versie)}</span><span class="hd">${esc(fmtDate(v.datum))}</span><span>${esc(v.wijziging)}</span></div>`).join("")
+    : `<p class="speconly">Geen versiegeschiedenis vastgelegd.</p>`;
+}
+function showTab(t){
+  for (const x of ["Doorlopen","Overzicht","Versies"]){
+    $("pane"+x).hidden = x !== t; $("tab"+x).setAttribute("aria-selected", x === t);
+  }
+}
+for (const x of ["Doorlopen","Overzicht","Versies"]) $("tab"+x).onclick = () => showTab(x);
+init();
+</script>
+</body>
+</html>

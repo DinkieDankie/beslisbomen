@@ -1,0 +1,74 @@
+{
+  "titel": "Fiscale beslisbomen",
+  "ondertitel": "Toetsvragen met onderbouwing voor de schenk- en erfbelasting en het formele belastingrecht",
+  "onderwerpen": [
+    {
+      "id": "formeel",
+      "titel": "Formeel recht",
+      "sub": [
+        {
+          "id": "formeel-bekendmaking",
+          "titel": "Bekendmaking en termijnen"
+        },
+        {
+          "id": "formeel-bezwaar",
+          "titel": "Bezwaar en beroep"
+        },
+        {
+          "id": "formeel-navordering",
+          "titel": "Navordering"
+        }
+      ]
+    },
+    {
+      "id": "schenk",
+      "titel": "Schenkbelasting",
+      "sub": [
+        {
+          "id": "schenk-begrip",
+          "titel": "Schenkingsbegrip"
+        },
+        {
+          "id": "schenk-vrijstellingen",
+          "titel": "Vrijstellingen"
+        }
+      ]
+    },
+    {
+      "id": "erf",
+      "titel": "Erfbelasting",
+      "sub": [
+        {
+          "id": "erf-ficties",
+          "titel": "Fictieve verkrijgingen"
+        },
+        {
+          "id": "erf-bor",
+          "titel": "Bedrijfsopvolgingsregeling"
+        }
+      ]
+    }
+  ],
+  "bomen": [
+    {
+      "id": "LB-001",
+      "bestand": "data/bomen/LB-001.json",
+      "onderwerp": "formeel-bekendmaking",
+      "trefwoorden": [
+        "retourpost",
+        "onbestelbaar",
+        "bekendmaking",
+        "adres",
+        "adreswijziging",
+        "BRP",
+        "verwijtbaar",
+        "fout Belastingdienst",
+        "bezwaartermijn",
+        "aanslagtermijn",
+        "verschoonbaar",
+        "art. 3:41 Awb",
+        "art. 11 AWR"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "id": "LB-001",
+  "titel": "Onbestelbaar retour gekomen aanslag",
+  "versie": "0.4-concept",
+  "datum": "2026-10-02",
+  "onderwerp": "formeel-bekendmaking",
+  "scope": "Aanslagbiljet per gewone post verzonden (aanslagen worden niet aangetekend verzonden) en onbestelbaar retour ontvangen. Digitale verzending (Berichtenbox) valt buiten deze boom.",
+  "kernvraag": "Is het niet bereiken van de belanghebbende te wijten aan een fout van de Belastingdienst, of komt het voor rekening van de belastingplichtige? En wat volgt daaruit voor bezwaartermijn, aanslagtermijn en invordering?",
+  "start": "V1",
+  "bronsoorten": {
+    "SPEC": "Mening specialist; bronnen kunnen later worden toegevoegd",
+    "WET": "Wetgeving",
+    "JUR": "Rechtspraak",
+    "BELEID": "Beleid/besluiten",
+    "LIT": "Literatuur"
+  },
+  "versiegeschiedenis": [
+    {
+      "versie": "0.1-concept",
+      "datum": "2026-09-25",
+      "wijziging": "Opzet boom: V1–V5, C1–C7; alle knooppunten SPEC."
+    },
+    {
+      "versie": "0.2-concept",
+      "datum": "2026-09-25",
+      "wijziging": "Bronnen toegevoegd bij V3 en C3 (juiste adres, bekendmaking ondanks retour); C3 aangescherpt."
+    },
+    {
+      "versie": "0.3-concept",
+      "datum": "2026-09-25",
+      "wijziging": "V6, V7 en C8 toegevoegd (aangetekende verzending en navraag postbedrijf). Bronnen bij V5 en C7 (aanslagtermijn); C1 en C6 aangescherpt met HR 2012:BW0194 en HR 2014:930."
+    },
+    {
+      "versie": "0.4-concept",
+      "datum": "2026-10-02",
+      "wijziging": "Boom herbouwd rond de verwijtbaarheid van de onjuiste adressering (Belastingdienst of belastingplichtige). Retourreden als startvraag (V1); nieuwe vraag naar fouten in de adressering door de Belastingdienst (V2); V3 toegespitst op een bekend of behoren-te-kennen ander adres. Aangetekende verzending vervallen (oude V6, V7, C8), omdat aanslagen per gewone post gaan. Overlap V1/V3 en onbereikbare tekst in C5 opgeheven."
+    }
+  ],
+  "knooppunten": [
+    {
+      "id": "V1",
+      "type": "vraag",
+      "tekst": "Wat is volgens het postbedrijf de reden van retour?",
+      "toelichting": "Aanslagbiljetten gaan per gewone post. De retourreden is het eerste aanknopingspunt voor de vraag aan wie het niet bereiken van de belanghebbende te wijten is.",
+      "opties": [
+        {
+          "label": "Geweigerd door de geadresseerde",
+          "naar": "C2"
+        },
+        {
+          "label": "Adres onvolledig of onjuist geschreven",
+          "naar": "V2"
+        },
+        {
+          "label": "Geadresseerde onbekend of vertrokken",
+          "naar": "V2"
+        },
+        {
+          "label": "Geen of onduidelijke reden",
+          "naar": "V2"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "V2",
+      "type": "vraag",
+      "tekst": "Is het aanslagbiljet verzonden naar het adres dat de Belastingdienst op de verzenddatum moest gebruiken, en juist geschreven?",
+      "toelichting": "Het te gebruiken adres is het BRP-adres, of een door de belanghebbende zelf opgegeven (correspondentie)adres; voor een buitenlandse belastingplichtige het bij de Belastingdienst bekende adres. 'Nee' betekent: de Belastingdienst heeft van dat adres afgeweken of het onjuist overgenomen (bijv. verkeerd huisnummer, ontbrekende toevoeging). Een onvolledig adres dat de belanghebbende zelf zo heeft opgegeven of in de BRP heeft laten staan, valt onder 'Ja'.",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "V3"
+        },
+        {
+          "label": "Nee, fout in de adressering door de Belastingdienst",
+          "naar": "C1"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 3:41 lid 1 Awb; art. 8 lid 1 Invorderingswet 1990",
+          "kern": "Bekendmaking van de aanslag door toezending of uitreiking van het aanslagbiljet."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:1996:AA1935",
+          "vindplaats": "HR 3 januari 1996, nr. 30793, BNB 1996/93",
+          "ro": "3.4",
+          "kern": "Het risico van onjuiste adressering ligt in beginsel bij de verzender (belastingdienst). Dat is anders als de onjuiste adressering te wijten is aan de belastingplichtige, bijv. doordat hij niet heeft gezorgd voor een juiste vermelding in het bevolkingsregister of een adreswijziging tijdens lopende briefwisseling niet heeft opgegeven.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:1996:AA1935"
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2012:BV1885",
+          "vindplaats": "HR 13 juli 2012, nr. 10/05309, BNB 2012/263 m.nt. Pechler",
+          "ro": "3.4.2",
+          "kern": "Of verzending naar een onjuist adres een bekendmaking op de voorgeschreven wijze is (art. 3:41 Awb), hangt ervan af of die onjuiste adressering aan de Belastingdienst te wijten is.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2012:BV1885"
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "ro": "3.3.4",
+          "kern": "Bij toezending is als regel met de terpostbezorging bekendgemaakt. Uitzondering: de zending heeft de belastingschuldige niet bereikt door een fout van de Belastingdienst, bijvoorbeeld een verkeerde adressering die aan deze dienst is te wijten. Dan is de aanslag niet op de voorgeschreven wijze bekendgemaakt.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930"
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (tekst op rechtspraak.nl)"
+    },
+    {
+      "id": "V3",
+      "type": "vraag",
+      "tekst": "Kende de Belastingdienst op de verzenddatum een ander (nieuw) adres van de belanghebbende, of behoorde hij dat te kennen?",
+      "toelichting": "Denk aan een adreswijziging die de belanghebbende voldoende duidelijk heeft gemeld, ook buiten het voorgeschreven kanaal (bijv. in een brief of aangifte), of een nieuw adres dat tijdens een lopende briefwisseling bekend werd. Eerdere retourpost naar hetzelfde adres maakt op zichzelf niet dat de Belastingdienst een ander adres behoorde te kennen.",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "C1"
+        },
+        {
+          "label": "Nee",
+          "naar": "C3"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2012:BV1885",
+          "vindplaats": "HR 13 juli 2012, nr. 10/05309, BNB 2012/263 m.nt. Pechler",
+          "ro": "3.4.2-3.4.3",
+          "kern": "Bepalend is of de onjuiste adressering aan de Belastingdienst is te wijten. De inspecteur moet mede acht slaan op adresgegevens die de belastingplichtige op andere wijze voldoende duidelijk kenbaar heeft gemaakt; hij kan geen exclusieve meldingsroute voorschrijven zonder wettelijke basis, behalve als uit het formulier zelf blijkt dat daarop vermelde adreswijzigingen niet worden verwerkt.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2012:BV1885",
+          "betekenis_voor_boom": "Onderbouwt het element 'zonder dat de inspecteur een ander adres kende of behoorde te kennen'."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:1996:AA1935",
+          "vindplaats": "HR 3 januari 1996, nr. 30793, BNB 1996/93",
+          "ro": "3.4",
+          "kern": "Het risico van onjuiste adressering ligt in beginsel bij de verzender (belastingdienst). Dat is anders als de onjuiste adressering te wijten is aan de belastingplichtige, bijv. doordat hij niet heeft gezorgd voor een juiste vermelding in het bevolkingsregister of een adreswijziging tijdens lopende briefwisseling niet heeft opgegeven.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:1996:AA1935"
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:GHSHE:2024:2012",
+          "vindplaats": "Hof 's-Hertogenbosch 18 juni 2024, V-N 2024/50.12",
+          "ro": "4.7-4.8",
+          "kern": "Toepassing van de maatstaf: verzending naar het BRP-adres is een bekendmaking op de voorgeschreven wijze als de belanghebbende adreswijzigingen niet heeft doorgegeven en de inspecteur niet uit anderen hoofde van het nieuwe adres behoefde te weten.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:GHSHE:2024:2012"
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2022:45",
+          "vindplaats": "HR 4 februari 2022, nr. 19/05155, BNB 2022/33; V-N 2022/8.14",
+          "ro": "3.3",
+          "kern": "Dat eerder aan hetzelfde adres gerichte post onbestelbaar retour kwam, maakt verzending van het aanslagbiljet naar dat adres niet tot een fout van de Belastingdienst. Ook hoeft de inspecteur na terpostbezorging niet te onderzoeken of het correct geadresseerde stuk ordentelijk is aangeboden.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2022:45",
+          "opmerking": "De zaak betrof aangetekende verzending. De overweging dat eerdere retourpost op zichzelf geen fout van de Belastingdienst oplevert, geldt naar haar strekking ook voor gewone post (SPEC)."
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (tekst op rechtspraak.nl)"
+    },
+    {
+      "id": "V4",
+      "type": "vraag",
+      "tekst": "Is na retour een (nieuw) adres van de belanghebbende te achterhalen?",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "C4"
+        },
+        {
+          "label": "Nee (vertrokken, onbekend waarheen)",
+          "naar": "C5"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "V5",
+      "type": "vraag",
+      "tekst": "Wordt de aanslag binnen de aanslagtermijn (art. 11 lid 3 AWR; navordering art. 16 AWR) alsnog op de voorgeschreven wijze bekendgemaakt, of ontvangt de belanghebbende (of zijn vertegenwoordiger) binnen die termijn het aanslagbiljet of een afschrift?",
+      "toelichting": "Bepalend is niet de dagtekening, maar de bekendmaking: de dag van terpostbezorging aan het juiste adres, of (bij gebrekkige bekendmaking) de dag vóór ontvangst van het biljet of een afschrift. Dat de belanghebbende weet dat het biljet naar een verkeerd adres is gestuurd, is niet genoeg. De inspecteur moet de ontvangst stellen en bewijzen.",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "C6"
+        },
+        {
+          "label": "Nee",
+          "naar": "C7"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 5 AWR; art. 11 lid 3 AWR; art. 16 lid 3 en 4 AWR",
+          "kern": "De dagtekening van het aanslagbiljet geldt als dagtekening van de vaststelling. Het recht om een aanslag op te leggen vervalt drie jaar na het ontstaan van de belastingschuld (verlengd met uitstel voor de aangifte); voor navordering gelden de termijnen van art. 16 AWR."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930",
+          "ro": "3.3.2",
+          "kern": "Een aanslag is niet binnen de termijn van art. 11 lid 3 AWR vastgesteld als het biljet wel binnen de termijn is gedagtekend, maar de aanslag pas daarna is bekendgemaakt. Strekking: waarborg dat de belastingplichtige tijdig zijn afrekening krijgt (Kamerstukken II 1954/55, 4080, nr. 3, blz. 15)."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930",
+          "ro": "3.3.5",
+          "kern": "Bij gebrekkige bekendmaking is aan de bekendmakingsregels toch voldaan zodra de belanghebbende of zijn vertegenwoordiger het biljet of een afschrift ontvangt. Voor art. 5 AWR geldt het biljet dan als de dag daarvoor toegezonden. Stelplicht en bewijslast liggen bij de inspecteur."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930",
+          "ro": "3.3.6-3.3.7",
+          "kern": "Weten dat het biljet naar een verkeerd adres is gestuurd, is niet genoeg (de HR komt terug van HR 6 december 1989, BNB 1990/177). Hetzelfde geldt voor de navorderings- en naheffingstermijnen."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2022:45",
+          "vindplaats": "HR 4 februari 2022, nr. 19/05155, BNB 2022/33",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2022:45",
+          "ro": "3.2.1-3.2.2",
+          "kern": "Bevestigt de maatstaf: bij toezending is als regel de dag van terpostbezorging bepalend voor tijdige bekendmaking binnen art. 11 lid 3 AWR."
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (tekst op rechtspraak.nl)"
+    },
+    {
+      "id": "C1",
+      "type": "conclusie",
+      "tekst": "De zending heeft de belanghebbende niet bereikt door een fout van de Belastingdienst: de aanslag is niet op de voorgeschreven wijze bekendgemaakt. De aanslag bestaat wel, maar is niet in werking getreden (art. 3:40 Awb) en is niet van rechtswege nietig. De bezwaartermijn begint pas bij ontvangst van het biljet of een afschrift; een eerder ingediend bezwaar is ontvankelijk (prematuur). Invorderingsmaatregelen missen grondslag zolang de aanslag niet is bekendgemaakt (SPEC).",
+      "vervolg": "V5",
+      "onderbouwing": [
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "ro": "3.3.4",
+          "kern": "Bij toezending is als regel met de terpostbezorging bekendgemaakt. Uitzondering: de zending heeft de belastingschuldige niet bereikt door een fout van de Belastingdienst, bijvoorbeeld een verkeerde adressering die aan deze dienst is te wijten. Dan is de aanslag niet op de voorgeschreven wijze bekendgemaakt.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930"
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2012:BW0194",
+          "vindplaats": "HR 29 juni 2012, nr. 11/03759, BNB 2012/253 m.nt. Van Amersfoort; AB 2012/276",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2012:BW0194",
+          "ro": "3.3.2-3.3.5",
+          "kern": "Aanslag bestaat, maar is niet in werking getreden; niet nietig. De bezwaartermijn begint op de dag van ontvangst van het biljet of een afschrift (HR 15 maart 2000, BNB 2000/220). Een bezwaar ingediend na een dwangbevel maar vóór ontvangst is ontvankelijk; het bezwaar niet-ontvankelijk verklaren was onjuist."
+        },
+        {
+          "soort": "SPEC",
+          "betreft": "invordering (aanmaning/dwangbevel) zonder bekendmaking"
+        }
+      ],
+      "verificatie": "deels geverifieerd 2026-09-25 (HR 2012:BW0194); onderdeel invordering SPEC"
+    },
+    {
+      "id": "C2",
+      "type": "conclusie",
+      "tekst": "Rechtsgeldig bekendgemaakt. Het biljet is op het juiste adres aangeboden; de weigering komt voor risico van de belanghebbende. De bezwaartermijn vangt aan op de dag na dagtekening van het aanslagbiljet (art. 22j AWR), tenzij de dagtekening vóór de terpostbezorging ligt.",
+      "vervolg": "V4",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C3",
+      "type": "conclusie",
+      "tekst": "Het niet bereiken van de belanghebbende is aan hemzelf te wijten (BRP niet bijgehouden, adreswijziging niet gemeld of zelf een onjuist adres opgegeven). De aanslag is met de terpostbezorging rechtsgeldig bekendgemaakt; feitelijke ontvangst is niet vereist en de retour doet daar niet aan af. De bezwaartermijn loopt vanaf de dag na dagtekening (art. 22j AWR). Een te laat bezwaar is in beginsel niet verschoonbaar (art. 6:11 Awb), omdat de oorzaak in de risicosfeer van de belanghebbende ligt.",
+      "vervolg": "V4",
+      "onderbouwing": [
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2004:AO5063",
+          "vindplaats": "HR 5 maart 2004, nr. 39245, BNB 2004/200 m.nt. Van Soest",
+          "ro": "3.2",
+          "kern": "Bij toezending kan in de regel worden aangenomen dat de bekendmaking heeft plaatsgevonden met de terpostbezorging. De bezwaartermijn vangt aan op de dag na dagtekening (art. 22j AWR), tenzij de dagtekening ligt vóór de terpostbezorging. Uitzondering: de zending bereikt de belastingschuldige niet door een fout van de belastingdienst, zoals verkeerde adressering. Verzending naar een adres dat kort voor toezending feitelijk juist was, voldoet.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2004:AO5063",
+          "opmerking": "HR 18 april 2014 (ECLI:NL:HR:2014:930) verwijst voor BNB 2004/200 naar 'ECLI:NL:HR:2004:AO5064'. Op rechtspraak.nl staat BNB 2004/200 onder AO5063; AO5064 levert geen document op."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "ro": "3.3.2-3.3.7",
+          "kern": "Voor de aanslagtermijn (art. 11 lid 3 AWR) gelden dezelfde bekendmakingsmaatstaven als voor de bezwaartermijn: terpostbezorging is als regel bepalend, behalve bij een fout van de Belastingdienst. Dat geldt ook voor navorderings- en naheffingstermijnen (r.o. 3.3.7).",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930"
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2022:45",
+          "vindplaats": "HR 4 februari 2022, nr. 19/05155, BNB 2022/33; V-N 2022/8.14",
+          "ro": "3.2.2-3.3",
+          "kern": "Retourontvangst maakt de bekendmaking aan het juiste adres niet ongedaan. Het is geen fout van de Belastingdienst dat een aanslagbiljet aangetekend wordt verzonden naar een adres waarvan eerder aangetekende post onbestelbaar retour kwam. Ook zonder onderzoek naar de ordentelijke aanbieding van het correct geadresseerde biljet is de aanslag tijdig bekendgemaakt.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2022:45",
+          "betekenis_voor_boom": "Kernbron voor C3: juiste adressering + retour = toch bekendgemaakt; geen onderzoeksplicht voor de rechtsgeldigheid van de bekendmaking."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:GHSHE:2024:2012",
+          "vindplaats": "Hof 's-Hertogenbosch 18 juni 2024, V-N 2024/50.12",
+          "ro": "4.9",
+          "kern": "Maatstaf art. 6:11 Awb: (i) de belanghebbende diende te laat in door een hem niet toe te rekenen omstandigheid, en (ii) hij diende zo spoedig in als redelijkerwijs verlangd kon worden nadat die omstandigheid was weggevallen.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:GHSHE:2024:2012"
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (tekst op rechtspraak.nl)"
+    },
+    {
+      "id": "C4",
+      "type": "conclusie",
+      "tekst": "Duplicaat of kopie toezenden aan het nieuwe adres (dienstverlening). Dit start geen nieuwe bezwaartermijn: de oorspronkelijke bekendmaking blijft bepalend.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C5",
+      "type": "conclusie",
+      "tekst": "Geen adres bekend. De aanslag is al bekendgemaakt (C2/C3); aanvullende actie is niet vereist. Leg de retour en de reden vast in het dossier.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C6",
+      "type": "conclusie",
+      "tekst": "Opnieuw bekendmaken aan het juiste adres, of bij onbekend adres op een andere geschikte wijze (art. 3:41 lid 2 Awb). Ontvangst van het biljet of een afschrift door de belanghebbende of zijn vertegenwoordiger geldt ook als bekendmaking (de dag daarvoor, voor art. 5 AWR). Leg de ontvangst vast; de bewijslast ligt bij de inspecteur. De bezwaartermijn loopt vanaf die bekendmaking; de betalingstermijn (art. 9 Invorderingswet 1990) opnieuw bezien.",
+      "onderbouwing": [
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930",
+          "ro": "3.3.5",
+          "kern": "Ontvangst van het biljet of een afschrift herstelt het gebrek in de bekendmaking; bewijslast bij de inspecteur."
+        },
+        {
+          "soort": "SPEC",
+          "betreft": "andere geschikte wijze; betalingstermijn"
+        }
+      ],
+      "verificatie": "deels geverifieerd 2026-09-25"
+    },
+    {
+      "id": "C7",
+      "type": "conclusie",
+      "tekst": "Aanslagtermijn verstreken zonder tijdige bekendmaking: de aanslag is niet binnen de termijn vastgesteld en moet worden vernietigd (in bezwaar/beroep, of ambtshalve). Samenhangende voorlopige aanslagen en beschikkingen (heffingsrente/belastingrente) vernietigen; betaalde bedragen terugbetalen met invorderingsrente. NB: dat een aanslag niet (tijdig) is bekendgemaakt, is op zichzelf geen grond voor vernietiging en maakt hem niet van rechtswege nietig. De vernietigingsgrond is de overschrijding van de aanslagtermijn.",
+      "onderbouwing": [
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930",
+          "ro": "3.4, 3.5.1-3.5.2",
+          "kern": "Het biljet is niet ter post bezorgd en de kopie is pas na afloop van de termijn uitgereikt. De aanslag is daarom niet binnen art. 11 lid 3 AWR vastgesteld en 'moet worden vernietigd'. Gevolg: ook de voorlopige aanslag en de heffingsrentebeschikking vernietigen en de betaalde bedragen terugbetalen met invorderingsrente (vgl. HR 16 oktober 1991, BNB 1991/339; HR 9 augustus 1996, BNB 1996/317)."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2012:BW0194",
+          "vindplaats": "HR 29 juni 2012, nr. 11/03759, BNB 2012/253 m.nt. Van Amersfoort; AB 2012/276",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2012:BW0194",
+          "ro": "3.3.2-3.3.3",
+          "kern": "Bekendmaking is geen voorwaarde voor het tot stand komen van een besluit, alleen voor de inwerkingtreding (art. 3:40 Awb). Het enkele ontbreken van bekendmaking is geen grond voor vernietiging en maakt de aanslag niet van rechtswege nietig (vgl. HR 25 november 2005, BNB 2006/43)."
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (tekst op rechtspraak.nl)"
+    }
+  ]
+}
