@@ -2,7 +2,7 @@
 
 Interactieve beslisbomen voor de schenk- en erfbelasting en het formele belastingrecht.
 Per boom doorloop je de toetsvragen stap voor stap. Bij elk knooppunt staat de onderbouwing:
-JUR (rechtspraak), WET (wetgeving), BELEID, LIT (literatuur) of SPEC (oordeel van de specialist,
+JUR (rechtspraak), WET (wetgeving), BELEID, LIT (literatuur), OVERIG (feitelijke informatie) of SPEC (oordeel van de specialist,
 nog zonder bronverwijzing).
 
 ## Opbouw

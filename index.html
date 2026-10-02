@@ -135,7 +135,7 @@ nav.menu{display:grid;gap:14px;position:sticky;top:16px}
 .b-JUR{background:var(--jur-bg);color:var(--jur)}
 .b-WET{background:var(--wet-bg);color:var(--wet)}
 .b-SPEC{background:var(--warn-bg);color:var(--warn)}
-.b-BELEID,.b-LIT{background:var(--sunk);color:var(--ink)}
+.b-BELEID,.b-LIT,.b-OVERIG{background:var(--sunk);color:var(--ink)}
 .vp{font-weight:500;font-size:14px}
 .ecli{font:400 12.5px/1.4 var(--mono);color:var(--muted);overflow-wrap:anywhere}
 .src p{margin:0;font-size:14px;max-width:72ch}
@@ -211,6 +211,7 @@ footer{border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:va
         <span><span class="badge b-JUR">JUR</span> rechtspraak</span>
         <span><span class="badge b-WET">WET</span> wetgeving</span>
         <span><span class="badge b-BELEID">BELEID</span> beleid</span>
+        <span><span class="badge b-OVERIG">OVERIG</span> overige bron</span>
         <span><span class="badge b-SPEC">SPEC</span> oordeel specialist</span>
       </div>
       <div class="overview" id="overview"></div>
@@ -218,7 +219,7 @@ footer{border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:va
     <div id="paneVersies" class="panel" hidden><h2>Versiegeschiedenis</h2><div class="hist" id="hist"></div></div>
   </section>
 
-  <footer id="foot">Onderbouwing per knooppunt: JUR (rechtspraak), WET (wetgeving), BELEID, LIT (literatuur) of SPEC (oordeel van de specialist, nog zonder bronverwijzing).</footer>
+  <footer id="foot">Onderbouwing per knooppunt: JUR (rechtspraak), WET (wetgeving), BELEID, LIT (literatuur), OVERIG (feitelijke informatie) of SPEC (oordeel van de specialist, nog zonder bronverwijzing).</footer>
 </div>
 
 <script>
