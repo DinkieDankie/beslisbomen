@@ -1,0 +1,501 @@
+{
+  "id": "LB-002",
+  "titel": "Ontvankelijkheid van het bezwaar tegen een aanslag",
+  "versie": "0.1-concept",
+  "datum": "2026-10-05",
+  "onderwerp": "formeel-bezwaar",
+  "scope": "Bezwaar tegen een aanslag erf- of schenkbelasting (of een andere rijksbelastingaanslag), schriftelijk per post of elektronisch ingediend. Inhoudelijke beoordeling van het bezwaar valt buiten deze boom.",
+  "kernvraag": "Is het bezwaar ontvankelijk, en in het bijzonder: is het tijdig ingediend, gelet op de bekendmaking van de aanslag en de ontvangst van het bezwaarschrift?",
+  "start": "V1",
+  "bronsoorten": {
+    "SPEC": "Mening specialist; bronnen kunnen later worden toegevoegd",
+    "WET": "Wetgeving",
+    "JUR": "Rechtspraak",
+    "BELEID": "Beleid/besluiten",
+    "LIT": "Literatuur",
+    "OVERIG": "Overige bron (feitelijke informatie, bijv. postbedrijf)"
+  },
+  "versiegeschiedenis": [
+    {
+      "versie": "0.1-concept",
+      "datum": "2026-10-05",
+      "wijziging": "Opzet boom ontvankelijkheid: besluit, belanghebbende, vormvereisten en herstel, bekendmaking (koppeling met LB-001), aanvang termijn, tijdige ontvangst, bewijs van verzending en ontvangst van het bezwaarschrift, verschoonbaarheid."
+    }
+  ],
+  "knooppunten": [
+    {
+      "id": "V1",
+      "type": "vraag",
+      "tekst": "Is het bezwaar gericht tegen een besluit waartegen bezwaar openstaat (een aanslag of een voor bezwaar vatbare beschikking)?",
+      "toelichting": "Bijvoorbeeld de aanslag erf- of schenkbelasting, een beschikking belastingrente of een boetebeschikking. Geen voor bezwaar vatbaar besluit is bijvoorbeeld een brief met een voornemen of een mededeling.",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "V2"
+        },
+        {
+          "label": "Nee",
+          "naar": "C1"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 26 AWR; art. 7:1 Awb",
+          "kern": "Tegen een voor bezwaar vatbare beschikking of aanslag kan bezwaar worden gemaakt."
+        }
+      ],
+      "verificatie": "wettekst; toepassing SPEC"
+    },
+    {
+      "id": "V2",
+      "type": "vraag",
+      "tekst": "Is de indiener de belanghebbende (degene aan wie de aanslag is opgelegd) of een gemachtigde van hem?",
+      "toelichting": "Bij de erfbelasting krijgt iedere verkrijger een eigen aanslag; ieder kan alleen bezwaar maken tegen de eigen aanslag. Ontbreekt de machtiging van een gemachtigde, dan moet eerst gelegenheid worden geboden die over te leggen.",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "V3"
+        },
+        {
+          "label": "Nee",
+          "naar": "C2"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 26a AWR; art. 1:2 en 2:1 Awb",
+          "kern": "Wie bezwaar kan maken; vertegenwoordiging door een gemachtigde en het vragen om een schriftelijke machtiging."
+        }
+      ],
+      "verificatie": "wettekst; toepassing SPEC"
+    },
+    {
+      "id": "V3",
+      "type": "vraag",
+      "tekst": "Voldoet het bezwaarschrift aan de vormvereisten (ondertekend, naam en adres, dagtekening, omschrijving van de aanslag, gronden)?",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "V4"
+        },
+        {
+          "label": "Nee",
+          "naar": "V3a"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 6:5 Awb",
+          "kern": "Vereisten waaraan een bezwaarschrift moet voldoen."
+        }
+      ],
+      "verificatie": "wettekst"
+    },
+    {
+      "id": "V3a",
+      "type": "vraag",
+      "tekst": "Is de belanghebbende in de gelegenheid gesteld het verzuim binnen een gestelde termijn te herstellen, en heeft hij dat gedaan?",
+      "opties": [
+        {
+          "label": "Hersteld binnen de gestelde termijn",
+          "naar": "V4"
+        },
+        {
+          "label": "Niet hersteld na geboden gelegenheid",
+          "naar": "C3"
+        },
+        {
+          "label": "Nog geen gelegenheid tot herstel geboden",
+          "naar": "C3a"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 6:6 Awb",
+          "kern": "Niet-ontvankelijkverklaring wegens een vormverzuim kan pas nadat de indiener gelegenheid heeft gehad het verzuim binnen een gestelde termijn te herstellen."
+        }
+      ],
+      "verificatie": "wettekst"
+    },
+    {
+      "id": "V4",
+      "type": "vraag",
+      "tekst": "Is de aanslag op de voorgeschreven wijze bekendgemaakt?",
+      "toelichting": "Dit is de schakel met LB-001. Zonder fout van de Belastingdienst is de aanslag bekendgemaakt met de terpostbezorging, ook als het biljet retour kwam. Bij een fout van de Belastingdienst (bijv. verkeerde adressering) is de aanslag pas bekendgemaakt als de belanghebbende of zijn vertegenwoordiger het biljet of een afschrift ontvangt.",
+      "zie": [
+        {
+          "boom": "LB-001",
+          "knooppunt": "V1",
+          "label": "bekendmaking bij een onbestelbaar retour gekomen aanslag"
+        }
+      ],
+      "opties": [
+        {
+          "label": "Ja, bekendgemaakt met de terpostbezorging",
+          "naar": "V5"
+        },
+        {
+          "label": "Nee, maar biljet of afschrift is later ontvangen",
+          "naar": "V5"
+        },
+        {
+          "label": "Nee, en biljet of afschrift is nog niet ontvangen",
+          "naar": "C4"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2004:AO5063",
+          "vindplaats": "HR 5 maart 2004, nr. 39245, BNB 2004/200 m.nt. Van Soest",
+          "ro": "3.2",
+          "kern": "Bij toezending kan in de regel worden aangenomen dat de bekendmaking heeft plaatsgevonden met de terpostbezorging. De bezwaartermijn vangt aan op de dag na dagtekening (art. 22j AWR), tenzij de dagtekening ligt vóór de terpostbezorging. Uitzondering: de zending bereikt de belastingschuldige niet door een fout van de belastingdienst, zoals verkeerde adressering. Verzending naar een adres dat kort voor toezending feitelijk juist was, voldoet.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2004:AO5063",
+          "opmerking": "HR 18 april 2014 (ECLI:NL:HR:2014:930) verwijst voor BNB 2004/200 naar 'ECLI:NL:HR:2004:AO5064'. Op rechtspraak.nl staat BNB 2004/200 onder AO5063; AO5064 levert geen document op."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:930",
+          "vindplaats": "HR 18 april 2014, nr. 13/04796, BNB 2014/182 m.nt. Douma",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:930",
+          "ro": "3.3.5",
+          "kern": "Ontvangst van het biljet of een afschrift herstelt het gebrek in de bekendmaking; bewijslast bij de inspecteur."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2012:BW0194",
+          "vindplaats": "HR 29 juni 2012, nr. 11/03759, BNB 2012/253 m.nt. Van Amersfoort; AB 2012/276",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2012:BW0194",
+          "ro": "3.3.2-3.3.5",
+          "kern": "Aanslag bestaat, maar is niet in werking getreden; niet nietig. De bezwaartermijn begint op de dag van ontvangst van het biljet of een afschrift (HR 15 maart 2000, BNB 2000/220). Een bezwaar ingediend na een dwangbevel maar vóór ontvangst is ontvankelijk; het bezwaar niet-ontvankelijk verklaren was onjuist."
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (via LB-001)"
+    },
+    {
+      "id": "V5",
+      "type": "vraag",
+      "tekst": "Wanneer is de bezwaartermijn van zes weken begonnen?",
+      "toelichting": "Kies de situatie die van toepassing is; de gekozen aanvang komt in de route voor het dossier.",
+      "opties": [
+        {
+          "label": "Dag na dagtekening van het aanslagbiljet (dagtekening niet vóór terpostbezorging)",
+          "naar": "V6"
+        },
+        {
+          "label": "Dag na terpostbezorging (dagtekening ligt vóór de terpostbezorging)",
+          "naar": "V6"
+        },
+        {
+          "label": "Dag na ontvangst van biljet of afschrift (gebrekkige bekendmaking hersteld)",
+          "naar": "V6"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 22j AWR; art. 6:7 en 6:8 Awb",
+          "kern": "De bezwaartermijn is zes weken. In afwijking van art. 6:8 Awb vangt hij bij een aanslag aan op de dag na dagtekening van het aanslagbiljet, tenzij de dagtekening vóór de terpostbezorging of uitreiking ligt."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2004:AO5063",
+          "vindplaats": "HR 5 maart 2004, nr. 39245, BNB 2004/200 m.nt. Van Soest",
+          "ro": "3.2",
+          "kern": "Bij toezending kan in de regel worden aangenomen dat de bekendmaking heeft plaatsgevonden met de terpostbezorging. De bezwaartermijn vangt aan op de dag na dagtekening (art. 22j AWR), tenzij de dagtekening ligt vóór de terpostbezorging. Uitzondering: de zending bereikt de belastingschuldige niet door een fout van de belastingdienst, zoals verkeerde adressering. Verzending naar een adres dat kort voor toezending feitelijk juist was, voldoet.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2004:AO5063",
+          "opmerking": "HR 18 april 2014 (ECLI:NL:HR:2014:930) verwijst voor BNB 2004/200 naar 'ECLI:NL:HR:2004:AO5064'. Op rechtspraak.nl staat BNB 2004/200 onder AO5063; AO5064 levert geen document op."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2012:BW0194",
+          "vindplaats": "HR 29 juni 2012, nr. 11/03759, BNB 2012/253 m.nt. Van Amersfoort; AB 2012/276",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2012:BW0194",
+          "ro": "3.3.2-3.3.5",
+          "kern": "Aanslag bestaat, maar is niet in werking getreden; niet nietig. De bezwaartermijn begint op de dag van ontvangst van het biljet of een afschrift (HR 15 maart 2000, BNB 2000/220). Een bezwaar ingediend na een dwangbevel maar vóór ontvangst is ontvankelijk; het bezwaar niet-ontvankelijk verklaren was onjuist."
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (rechtspraak); wettekst"
+    },
+    {
+      "id": "V6",
+      "type": "vraag",
+      "tekst": "Is het bezwaarschrift binnen de termijn door de Belastingdienst ontvangen?",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "C5"
+        },
+        {
+          "label": "Nee, ontvangen na afloop van de termijn",
+          "naar": "V7"
+        },
+        {
+          "label": "Geen bezwaarschrift ontvangen; de belanghebbende stelt het tijdig te hebben verzonden",
+          "naar": "V8"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 6:9 lid 1 Awb",
+          "kern": "Een bezwaarschrift is tijdig ingediend als het vóór het einde van de termijn is ontvangen."
+        }
+      ],
+      "verificatie": "wettekst"
+    },
+    {
+      "id": "V7",
+      "type": "vraag",
+      "tekst": "Is het bezwaarschrift per post vóór het einde van de termijn ter post bezorgd en uiterlijk een week na afloop van de termijn ontvangen?",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "C5"
+        },
+        {
+          "label": "Nee",
+          "naar": "V9"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 6:9 lid 2 Awb",
+          "kern": "Bij verzending per post is een bezwaarschrift tijdig als het vóór het einde van de termijn ter post is bezorgd, mits het niet later dan een week na afloop van de termijn is ontvangen."
+        }
+      ],
+      "verificatie": "wettekst"
+    },
+    {
+      "id": "V8",
+      "type": "vraag",
+      "tekst": "Maakt de belanghebbende aannemelijk dat hij het bezwaarschrift tijdig naar het juiste (post- of e-mail)adres heeft verzonden?",
+      "toelichting": "Bewijs van verzending naar het juiste adres rechtvaardigt het vermoeden van ontvangst. Dit is dezelfde regel als bij de verzending van de aanslag, maar met omgekeerde rollen.",
+      "zie": [
+        {
+          "boom": "LB-001",
+          "knooppunt": "C2",
+          "label": "bekendmaking van de aanslag door terpostbezorging"
+        }
+      ],
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "V8a"
+        },
+        {
+          "label": "Nee",
+          "naar": "V9"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:418",
+          "vindplaats": "HR 28 februari 2014, nr. 13/01830, BNB 2014/99",
+          "ro": "4.3.1",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:418",
+          "kern": "Stelt een bestuursorgaan een niet aangetekend verzonden stuk niet te hebben ontvangen, dan is het in beginsel aan de belanghebbende om ontvangst aannemelijk te maken. Het vermoeden van ontvangst bij verzending per post brengt mee dat hij in eerste instantie kan volstaan met bewijs van verzending naar het juiste adres. Het bestuursorgaan moet dat vermoeden ontzenuwen; daarvoor volstaat dat ontvangst redelijkerwijs moet worden betwijfeld. Slaagt het daarin, dan is nader bewijs van de belanghebbende nodig. Wordt ontvangst niet aannemelijk, dan moet de belanghebbende aannemelijk maken dat dit aan het bestuursorgaan toe te rekenen is (vgl. HR 15 december 2006, BNB 2007/112).",
+          "opmerking": "De zaak betrof een melding betalingsonmacht; de maatstaf is algemeen geformuleerd voor stukken aan een bestuursorgaan en geldt ook voor een bezwaarschrift (SPEC)."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2026:570",
+          "vindplaats": "HR 10 april 2026, nr. 25/02834, BNB 2026/76; V-N 2026/18.16",
+          "ro": "3.2.2-3.2.6",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2026:570",
+          "kern": "Voor e-mail geldt dezelfde opbouw. Ontvangen is het bericht wanneer het het systeem van het bestuursorgaan heeft bereikt (art. 2:17 lid 2 (oud) Awb, thans art. 2:20 Awb). Bewijs van verzending naar het juiste e-mailadres rechtvaardigt het vermoeden van ontvangst. Om dat vermoeden te ontzenuwen moet het bestuursorgaan ten minste laten zien dat het heeft onderzocht of het bericht op de verzenddag zijn systeem heeft bereikt."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2006:AZ4416",
+          "vindplaats": "HR 15 december 2006, nr. 41882, BNB 2007/112 m.nt. Van Leijenhorst",
+          "ro": "3.2.2",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2006:AZ4416",
+          "kern": "(Stuk van de Belastingdienst naar de belastingplichtige.) Ontkent de belastingplichtige ontvangst, dan is het in beginsel aan de inspecteur om ontvangst of aanbieding aannemelijk te maken. Het vermoeden van ontvangst bij verzending per post betekent dat de inspecteur in eerste instantie kan volstaan met bewijs van verzending naar het juiste adres; daarna is het aan de belastingplichtige dat vermoeden te ontzenuwen.",
+          "betekenis_voor_boom": "Spiegelbeeld van de regel bij V8 en V9: dezelfde bewijsregel geldt voor de aanslag (LB-001) en voor het bezwaarschrift."
+        }
+      ],
+      "verificatie": "geverifieerd 2026-10-05 (tekst op rechtspraak.nl)"
+    },
+    {
+      "id": "V8a",
+      "type": "vraag",
+      "tekst": "Heeft de Belastingdienst het vermoeden van ontvangst ontzenuwd, en zo ja: levert de belanghebbende nader bewijs of is het niet ontvangen aan de Belastingdienst toe te rekenen?",
+      "toelichting": "Ontzenuwen vereist niet dat de Belastingdienst niet-ontvangst bewijst; voldoende is dat ontvangst redelijkerwijs moet worden betwijfeld. Bij e-mail moet de Belastingdienst ten minste laten zien dat hij heeft onderzocht of het bericht op de verzenddag zijn systeem heeft bereikt. Bij post: onderzoek in de postregistratie en het dossier.",
+      "opties": [
+        {
+          "label": "Vermoeden niet ontzenuwd",
+          "naar": "C5"
+        },
+        {
+          "label": "Ontzenuwd, maar nader bewijs geleverd of niet-ontvangst aan de Belastingdienst toe te rekenen",
+          "naar": "C5"
+        },
+        {
+          "label": "Ontzenuwd, geen nader bewijs en niet aan de Belastingdienst toe te rekenen",
+          "naar": "V9"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2014:418",
+          "vindplaats": "HR 28 februari 2014, nr. 13/01830, BNB 2014/99",
+          "ro": "4.3.1",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2014:418",
+          "kern": "Stelt een bestuursorgaan een niet aangetekend verzonden stuk niet te hebben ontvangen, dan is het in beginsel aan de belanghebbende om ontvangst aannemelijk te maken. Het vermoeden van ontvangst bij verzending per post brengt mee dat hij in eerste instantie kan volstaan met bewijs van verzending naar het juiste adres. Het bestuursorgaan moet dat vermoeden ontzenuwen; daarvoor volstaat dat ontvangst redelijkerwijs moet worden betwijfeld. Slaagt het daarin, dan is nader bewijs van de belanghebbende nodig. Wordt ontvangst niet aannemelijk, dan moet de belanghebbende aannemelijk maken dat dit aan het bestuursorgaan toe te rekenen is (vgl. HR 15 december 2006, BNB 2007/112).",
+          "opmerking": "De zaak betrof een melding betalingsonmacht; de maatstaf is algemeen geformuleerd voor stukken aan een bestuursorgaan en geldt ook voor een bezwaarschrift (SPEC)."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2026:570",
+          "vindplaats": "HR 10 april 2026, nr. 25/02834, BNB 2026/76; V-N 2026/18.16",
+          "ro": "3.2.2-3.2.6",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2026:570",
+          "kern": "Voor e-mail geldt dezelfde opbouw. Ontvangen is het bericht wanneer het het systeem van het bestuursorgaan heeft bereikt (art. 2:17 lid 2 (oud) Awb, thans art. 2:20 Awb). Bewijs van verzending naar het juiste e-mailadres rechtvaardigt het vermoeden van ontvangst. Om dat vermoeden te ontzenuwen moet het bestuursorgaan ten minste laten zien dat het heeft onderzocht of het bericht op de verzenddag zijn systeem heeft bereikt."
+        }
+      ],
+      "verificatie": "geverifieerd 2026-10-05 (tekst op rechtspraak.nl)"
+    },
+    {
+      "id": "V9",
+      "type": "vraag",
+      "tekst": "Is de termijnoverschrijding verschoonbaar?",
+      "toelichting": "Toets: (i) is het bezwaar te laat door een omstandigheid die de belanghebbende niet is toe te rekenen, en (ii) is het daarna zo spoedig als redelijkerwijs mogelijk ingediend? Ligt de oorzaak in het niet ontvangen van de aanslag, beoordeel dan in LB-001 of dat aan de belanghebbende toe te rekenen is.",
+      "zie": [
+        {
+          "boom": "LB-001",
+          "knooppunt": "V3",
+          "label": "is het niet ontvangen van de aanslag aan de belanghebbende toe te rekenen?"
+        }
+      ],
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "C5"
+        },
+        {
+          "label": "Nee",
+          "naar": "C6"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 6:11 Awb",
+          "kern": "Niet-ontvankelijkverklaring blijft achterwege als redelijkerwijs niet kan worden geoordeeld dat de indiener in verzuim is geweest."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:GHSHE:2024:2012",
+          "vindplaats": "Hof 's-Hertogenbosch 18 juni 2024, V-N 2024/50.12",
+          "ro": "4.9",
+          "kern": "Maatstaf art. 6:11 Awb: (i) de belanghebbende diende te laat in door een hem niet toe te rekenen omstandigheid, en (ii) hij diende zo spoedig in als redelijkerwijs verlangd kon worden nadat die omstandigheid was weggevallen.",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:GHSHE:2024:2012"
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (maatstaf)"
+    },
+    {
+      "id": "C1",
+      "type": "conclusie",
+      "tekst": "Niet-ontvankelijk: er is geen voor bezwaar vatbaar besluit. Beoordeel of het geschrift moet worden behandeld als iets anders (bijv. verzoek om ambtshalve vermindering, verzoek om een beschikking, of klacht) en informeer de indiener.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C2",
+      "type": "conclusie",
+      "tekst": "Niet-ontvankelijk: de indiener is geen belanghebbende en treedt niet (aantoonbaar) op voor de belanghebbende. Bij een ontbrekende machtiging eerst gelegenheid bieden die over te leggen.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C3",
+      "type": "conclusie",
+      "tekst": "Niet-ontvankelijk wegens een niet hersteld vormverzuim (art. 6:6 Awb).",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C3a",
+      "type": "conclusie",
+      "tekst": "Nog niet beslissen: bied eerst gelegenheid het verzuim binnen een redelijke termijn te herstellen (art. 6:6 Awb). Ga daarna terug naar V3a.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C4",
+      "type": "conclusie",
+      "tekst": "Ontvankelijk. De aanslag is niet bekendgemaakt, dus de bezwaartermijn is nog niet begonnen; een bezwaarschrift vóór het begin van de termijn is niet te laat (art. 6:10 Awb). Behandel het bezwaar inhoudelijk.",
+      "zie": [
+        {
+          "boom": "LB-001",
+          "knooppunt": "C1",
+          "label": "gevolgen van een niet bekendgemaakte aanslag"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 6:10 lid 1 Awb",
+          "kern": "Een bezwaarschrift dat vóór het begin van de termijn is ingediend, wordt niet niet-ontvankelijk verklaard als het besluit op dat moment al tot stand was gekomen."
+        },
+        {
+          "soort": "JUR",
+          "ecli": "ECLI:NL:HR:2012:BW0194",
+          "vindplaats": "HR 29 juni 2012, nr. 11/03759, BNB 2012/253 m.nt. Van Amersfoort; AB 2012/276",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2012:BW0194",
+          "ro": "3.3.2-3.3.5",
+          "kern": "Aanslag bestaat, maar is niet in werking getreden; niet nietig. De bezwaartermijn begint op de dag van ontvangst van het biljet of een afschrift (HR 15 maart 2000, BNB 2000/220). Een bezwaar ingediend na een dwangbevel maar vóór ontvangst is ontvankelijk; het bezwaar niet-ontvankelijk verklaren was onjuist."
+        }
+      ],
+      "verificatie": "geverifieerd 2026-09-25 (rechtspraak); wettekst"
+    },
+    {
+      "id": "C5",
+      "type": "conclusie",
+      "tekst": "Het bezwaar is ontvankelijk (tijdig of verschoonbaar te laat). Behandel het bezwaar inhoudelijk.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C6",
+      "type": "conclusie",
+      "tekst": "Niet-ontvankelijk wegens termijnoverschrijding. Beoordeel of het bezwaar als verzoek om ambtshalve vermindering moet worden behandeld en of horen achterwege kan blijven omdat het bezwaar kennelijk niet-ontvankelijk is.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC",
+          "betreft": "ambtshalve vermindering; horen bij kennelijke niet-ontvankelijkheid"
+        }
+      ],
+      "verificatie": "open"
+    }
+  ]
+}

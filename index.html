@@ -158,6 +158,9 @@ nav.menu{display:grid;gap:14px;position:sticky;top:16px}
 @media (max-width:560px){.hist .h{grid-template-columns:1fr}}
 .hist .hv{font:500 13px/1.5 var(--mono)}
 .hist .hd{font:400 13px/1.5 var(--mono);color:var(--muted)}
+.zie{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.zielink{border:1px dashed var(--accent);background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:13px;text-align:left}
+.zielink:hover{border-style:solid}
 .toast{font-size:13px;color:var(--concl)}
 .err{background:var(--warn-bg);color:var(--warn);padding:14px;border-radius:8px}
 textarea.copyfb{width:100%;min-height:160px;font:12px/1.5 var(--mono);background:var(--sunk);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:10px}
@@ -256,7 +259,7 @@ async function init(){
 }
 function route(){
   const h = decodeURIComponent((location.hash||"").slice(1));
-  if (h && S.trees[h]) openTree(h); else home();
+  if (h && S.trees[h]) { const at = S.pendingNode; S.pendingNode = null; openTree(h, at); } else home();
 }
 function show(v){ $("viewHome").hidden = v!=="home"; $("viewTree").hidden = v!=="tree"; }
 
@@ -331,7 +334,7 @@ function renderList(){
 }
 
 /* ---------- tree ---------- */
-function openTree(id){
+function openTree(id, at){
   S.boom = S.trees[id];
   S.nodes = Object.fromEntries(S.boom.knooppunten.map(n => [n.id, n]));
   show("tree");
@@ -344,10 +347,15 @@ function openTree(id){
   $("headRight").innerHTML = verChip(S.boom);
   document.title = `${S.boom.id} ${S.boom.titel}`;
   showTab("Doorlopen");
-  S.path = []; go(S.boom.start);
+  S.path = []; go(at && S.nodes[at] ? at : S.boom.start);
   renderOverview(); renderHist();
 }
 function go(id){ S.cur = id; render(); }
+function jumpTo(boom, node){
+  if (!S.trees[boom]) return;
+  if (S.boom && S.boom.id === boom){ S.path = []; showTab("Doorlopen"); go(node && S.nodes[node] ? node : S.boom.start); return; }
+  S.pendingNode = node || null; location.hash = boom;
+}
 function choose(label, to){ S.path.push({ id: S.cur, antwoord: label }); go(to); }
 function jumpBack(i){ const step = S.path[i]; S.path = S.path.slice(0, i); go(step.id); }
 
@@ -365,6 +373,7 @@ function render(){
   const isC = n.type === "conclusie";
   let body = isC ? `<p class="concltext">${esc(n.tekst)}</p>` : `<p class="question">${esc(n.tekst)}</p>`;
   if (n.toelichting) body += `<p class="toel">${esc(n.toelichting)}</p>`;
+  if (n.zie && n.zie.length) body += `<div class="zie">${n.zie.map(z => `<button class="zielink" data-zb="${esc(z.boom)}" data-zn="${esc(z.knooppunt||"")}">Zie ${esc(z.boom)}${z.knooppunt ? " › " + esc(z.knooppunt) : ""}${z.label ? ": " + esc(z.label) : ""}</button>`).join("")}</div>`;
   if (!isC){
     body += `<div class="opts">${n.opties.map(o => `<button class="opt" data-l="${esc(o.label)}" data-t="${esc(o.naar)}">${esc(o.label)}</button>`).join("")}</div>`;
   } else {
@@ -376,6 +385,7 @@ function render(){
   $("nodeCard").innerHTML = `<div class="card ${isC?"is-concl":""}"><div class="nodehead"><span class="nid">${esc(n.id)}</span><span class="kind">${isC?"Conclusie":"Toetsvraag"}</span></div>${body}</div>`;
   $("nodeCard").querySelectorAll("button.opt").forEach(b => b.onclick = () => choose(b.dataset.l, b.dataset.t));
   if ($("copyBtn")) $("copyBtn").onclick = copyRoute;
+  $("nodeCard").querySelectorAll(".zielink").forEach(b => b.onclick = () => jumpTo(b.dataset.zb, b.dataset.zn));
   if ($("prevBtn")) $("prevBtn").onclick = () => jumpBack(S.path.length-1);
   if ($("restartBtn")) $("restartBtn").onclick = () => { S.path = []; go(S.boom.start); };
   $("srcPanel").innerHTML = `<h2>Onderbouwing ${esc(n.id)}</h2>${srcHtml(n)}`;

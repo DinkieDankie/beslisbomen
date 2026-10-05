@@ -10,7 +10,7 @@ nog zonder bronverwijzing).
 ```
 index.html               de site (één bestand, geen build-stap)
 data/index.json          menu: onderwerpen en de lijst van bomen
-data/bomen/LB-001.json   één bestand per beslisboom
+data/bomen/LB-xxx.json   één bestand per beslisboom (LB-001, LB-002, …)
 .nojekyll                zorgt dat GitHub Pages de bestanden ongewijzigd serveert
 ```
 

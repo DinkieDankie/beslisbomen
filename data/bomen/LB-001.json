@@ -1,8 +1,8 @@
 {
   "id": "LB-001",
   "titel": "Onbestelbaar retour gekomen aanslag",
-  "versie": "0.5-concept",
-  "datum": "2026-10-02",
+  "versie": "0.5.1-concept",
+  "datum": "2026-10-05",
   "onderwerp": "formeel-bekendmaking",
   "scope": "Aanslagbiljet per gewone post verzonden (aanslagen worden niet aangetekend verzonden) en onbestelbaar retour ontvangen. Digitale verzending (Berichtenbox) valt buiten deze boom.",
   "kernvraag": "Is het niet bereiken van de belanghebbende te wijten aan een fout van de Belastingdienst, of komt het voor rekening van de belastingplichtige? En wat volgt daaruit voor bezwaartermijn, aanslagtermijn en invordering?",
@@ -40,6 +40,11 @@
       "versie": "0.5-concept",
       "datum": "2026-10-02",
       "wijziging": "Retourreden is geen startvraag meer (de reden ontbreekt vaak of is onbetrouwbaar); de boom begint bij de adressering (V1) en de kennis van de Belastingdienst (V2). Nieuw onderscheid: geen fout van de Belastingdienst betekent bekendgemaakt (C2), maar voor de verschoonbaarheid van een te laat bezwaar wordt apart bepaald of het niet ontvangen aan de belanghebbende toe te rekenen is (V3, C3) of niet vast te stellen (C4). Aparte route 'geweigerd' vervallen. Knooppunten hernummerd."
+    },
+    {
+      "versie": "0.5.1-concept",
+      "datum": "2026-10-05",
+      "wijziging": "Verwijzingen naar LB-002 (ontvankelijkheid bezwaar) toegevoegd bij V3 en C1; inhoud ongewijzigd."
     }
   ],
   "knooppunten": [
@@ -189,7 +194,14 @@
           "kern": "Een ontvanger kan post zelf retour sturen door het adres door te strepen en 'Vertrokken – retour afzender' te schrijven; daar komt geen controle door het postbedrijf aan te pas."
         }
       ],
-      "verificatie": "deels geverifieerd 2026-09-25 (maatstaf art. 6:11 Awb); indeling SPEC"
+      "verificatie": "deels geverifieerd 2026-09-25 (maatstaf art. 6:11 Awb); indeling SPEC",
+      "zie": [
+        {
+          "boom": "LB-002",
+          "knooppunt": "V9",
+          "label": "verschoonbaarheid in de ontvankelijkheidstoets"
+        }
+      ]
     },
     {
       "id": "V4",
@@ -295,7 +307,14 @@
           "betreft": "invordering (aanmaning/dwangbevel) zonder bekendmaking"
         }
       ],
-      "verificatie": "deels geverifieerd 2026-09-25 (HR 2012:BW0194); onderdeel invordering SPEC"
+      "verificatie": "deels geverifieerd 2026-09-25 (HR 2012:BW0194); onderdeel invordering SPEC",
+      "zie": [
+        {
+          "boom": "LB-002",
+          "knooppunt": "V4",
+          "label": "ontvankelijkheid van een bezwaar tegen een niet bekendgemaakte aanslag"
+        }
+      ]
     },
     {
       "id": "C2",

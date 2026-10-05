@@ -71,6 +71,29 @@
         "retourreden",
         "art. 6:11 Awb"
       ]
+    },
+    {
+      "id": "LB-002",
+      "bestand": "data/bomen/LB-002.json",
+      "onderwerp": "formeel-bezwaar",
+      "trefwoorden": [
+        "bezwaar",
+        "ontvankelijk",
+        "niet-ontvankelijk",
+        "bezwaartermijn",
+        "termijnoverschrijding",
+        "verschoonbaar",
+        "bezwaarschrift niet ontvangen",
+        "vermoeden van ontvangst",
+        "herstel verzuim",
+        "art. 6:5 Awb",
+        "art. 6:6 Awb",
+        "art. 6:7 Awb",
+        "art. 6:9 Awb",
+        "art. 6:10 Awb",
+        "art. 6:11 Awb",
+        "art. 22j AWR"
+      ]
     }
   ]
 }
