@@ -1,0 +1,267 @@
+{
+  "id": "LB-003",
+  "titel": "Toepassing van de bedrijfsopvolgingsregeling (BOR)",
+  "versie": "0.1-concept",
+  "datum": "2026-10-05",
+  "onderwerp": "erf-bor",
+  "scope": "Vrijstelling van ondernemingsvermogen bij verkrijging krachtens erfrecht of schenking (art. 35b–35f SW), stand 2026. Waardering van de onderneming en de doorschuifregeling in de inkomstenbelasting vallen buiten deze boom.",
+  "kernvraag": "Is de BOR van toepassing op (een deel van) de verkrijging, voor welk bedrag, en blijft de vrijstelling behouden?",
+  "start": "V1",
+  "bronsoorten": {
+    "SPEC": "Mening specialist; bronnen kunnen later worden toegevoegd",
+    "WET": "Wetgeving",
+    "JUR": "Rechtspraak",
+    "BELEID": "Beleid/besluiten",
+    "LIT": "Literatuur",
+    "OVERIG": "Overige bron (feitelijke informatie, bijv. postbedrijf)"
+  },
+  "versiegeschiedenis": [
+    {
+      "versie": "0.1-concept",
+      "datum": "2026-10-05",
+      "wijziging": "Opzet boom: soort verkrijging, ondernemingsvermogen of aandelen, aandelen-eisen, materiële onderneming, bezitseis, herhaalde toepassing, vrijstelling en voortzettingseis. Wijzigingen per 2025/2026 gemarkeerd als te verifiëren."
+    }
+  ],
+  "knooppunten": [
+    {
+      "id": "V1",
+      "type": "vraag",
+      "tekst": "Gaat het om een verkrijging krachtens erfrecht of krachtens schenking?",
+      "toelichting": "De BOR geldt voor beide, maar de bezitseis verschilt. Fictieve verkrijgingen (art. 9–17 SW) volgen de regels van de verkrijging waaronder zij vallen.",
+      "opties": [
+        {
+          "label": "Erfrecht (overlijden)",
+          "naar": "V2"
+        },
+        {
+          "label": "Schenking",
+          "naar": "V2"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "V2",
+      "type": "vraag",
+      "tekst": "Wat behoort tot de verkrijging?",
+      "opties": [
+        {
+          "label": "(Een evenredig deel van) een IB-onderneming",
+          "naar": "V4"
+        },
+        {
+          "label": "Aandelen of andere rechten in een vennootschap",
+          "naar": "V3"
+        },
+        {
+          "label": "Geen ondernemingsvermogen of aandelen",
+          "naar": "C1"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 35b en 35c SW",
+          "kern": "Vrijstelling voor ondernemingsvermogen; omschrijving van wat als ondernemingsvermogen geldt (IB-onderneming en aanmerkelijkbelangaandelen)."
+        }
+      ],
+      "verificatie": "wettekst niet opnieuw geraadpleegd; te verifiëren"
+    },
+    {
+      "id": "V3",
+      "type": "vraag",
+      "tekst": "Voldoen de aandelen aan de eisen voor de BOR (aanmerkelijk belang, soort aandelen)?",
+      "toelichting": "Toets of de erflater of schenker een aanmerkelijk belang had (in de regel ten minste 5%). Per 2026 zijn wijzigingen aangekondigd over preferente aandelen, winstbewijzen en een eis van gewone aandelen; de inwerkingtreding van een deel daarvan zou afhangen van goedkeuring door de Europese Commissie. Stand van de wetgeving per verkrijgingsdatum controleren.",
+      "opties": [
+        {
+          "label": "Ja",
+          "naar": "V4"
+        },
+        {
+          "label": "Nee",
+          "naar": "C1"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "SPEC",
+          "betreft": "aandelen-eisen en stand van de wijzigingen per 2026"
+        }
+      ],
+      "verificatie": "open; wetgeving 2026 te verifiëren"
+    },
+    {
+      "id": "V4",
+      "type": "vraag",
+      "tekst": "Wordt een materiële onderneming gedreven, en welk deel van het vermogen is ondernemingsvermogen?",
+      "toelichting": "Beleggingsvermogen valt buiten de BOR, ook binnen een holding (bijv. duurzaam overtollige liquiditeiten en een effectenportefeuille). Vastgoedexploitatie is in de regel geen onderneming. Volgens de gegevensspecificatie 2026 geldt geen 5%-marge voor beleggingsvermogen meer. Splits de waarde in ondernemingsvermogen en overig vermogen.",
+      "opties": [
+        {
+          "label": "Ja, (deels) ondernemingsvermogen",
+          "naar": "V5"
+        },
+        {
+          "label": "Nee, alleen beleggingsvermogen of vermogensbeheer",
+          "naar": "C1"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 35c SW",
+          "kern": "Ondernemingsvermogen; beleggingsvermogen behoort daar niet toe."
+        },
+        {
+          "soort": "SPEC",
+          "betreft": "afbakening onderneming/beleggingsvermogen; holdingstructuren; vervallen 5%-marge"
+        }
+      ],
+      "verificatie": "wettekst niet opnieuw geraadpleegd; te verifiëren"
+    },
+    {
+      "id": "V5",
+      "type": "vraag",
+      "tekst": "Heeft de erflater of schenker de onderneming of de aandelen lang genoeg in bezit gehad (bezitseis)?",
+      "toelichting": "Basis: bij overlijden 1 jaar, bij schenking 5 jaar vóór de verkrijging. Per 2026 is de bezitstermijn verlengd voor oudere erflaters en schenkers (gekoppeld aan de AOW-leeftijd); parameters per verkrijgingsdatum controleren. Bij uitbreiding van een belang binnen de termijn voldoet alleen het oude deel; de aangifte 2026 vraagt het deel dat wel en niet voldoet apart uit. Toerekening van eerdere bezitsperiodes (opvolging, herstructurering) beoordelen.",
+      "opties": [
+        {
+          "label": "Ja, geheel",
+          "naar": "V6"
+        },
+        {
+          "label": "Gedeeltelijk (uitbreiding binnen de termijn)",
+          "naar": "V6"
+        },
+        {
+          "label": "Nee",
+          "naar": "C1"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 35d lid 1 SW",
+          "kern": "Bezitseis bij overlijden en bij schenking."
+        },
+        {
+          "soort": "SPEC",
+          "betreft": "verlengde bezitstermijn 2026; toerekening en indirecte bezitseis"
+        }
+      ],
+      "verificatie": "open; wetgeving 2026 te verifiëren"
+    },
+    {
+      "id": "V6",
+      "type": "vraag",
+      "tekst": "Is voor dezelfde onderneming eerder al de BOR toegepast op een wijze die herhaalde toepassing uitsluit?",
+      "toelichting": "Per 2026 is een maatregel aangekondigd die herhaalde toepassing van de BOR op dezelfde onderneming beperkt. Inhoud en inwerkingtreding controleren.",
+      "opties": [
+        {
+          "label": "Nee",
+          "naar": "C2"
+        },
+        {
+          "label": "Ja",
+          "naar": "C1"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "SPEC",
+          "betreft": "beperking herhaalde toepassing per 2026"
+        }
+      ],
+      "verificatie": "open; wetgeving 2026 te verifiëren"
+    },
+    {
+      "id": "V7",
+      "type": "vraag",
+      "tekst": "Wordt binnen de voortzettingstermijn de onderneming gestaakt, vervreemd of niet voortgezet?",
+      "toelichting": "De voortzettingstermijn is voor verkrijgingen vanaf 1 januari 2025 drie jaar (daarvoor vijf jaar). Herstructureringen (fusie, splitsing, rechtsvormwijziging) zijn per 2026 ruimer toegestaan als het belang van de verkrijger niet wijzigt. Vervreemding van een toegerekende deelneming telt ook.",
+      "opties": [
+        {
+          "label": "Nee, voortgezet",
+          "naar": "C3"
+        },
+        {
+          "label": "Ja, (deels) niet voortgezet",
+          "naar": "C4"
+        }
+      ],
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 35e SW",
+          "kern": "Voortzettingseis."
+        },
+        {
+          "soort": "SPEC",
+          "betreft": "termijn en toegestane herstructureringen per 2025/2026"
+        }
+      ],
+      "verificatie": "wettekst niet opnieuw geraadpleegd; te verifiëren"
+    },
+    {
+      "id": "C1",
+      "type": "conclusie",
+      "tekst": "Geen BOR (of niet voor dit deel). Het vermogen wordt belast volgens de gewone regels. Beoordeel of uitstel van betaling of een andere faciliteit van toepassing is.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C2",
+      "type": "conclusie",
+      "tekst": "BOR van toepassing op het ondernemingsvermogen dat aan de eisen voldoet: vrijstelling van 100% tot € 1.543.500 en 75% daarboven (bedragen 2026). Voor het belaste deel van het ondernemingsvermogen kan uitstel van betaling worden gevraagd. De vrijstelling is voorwaardelijk: zij wordt verleend onder de voortzettingseis.",
+      "vervolg": "V7",
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 35b SW",
+          "kern": "Vrijstelling ondernemingsvermogen; bedragen 2026 volgens tariefblad."
+        },
+        {
+          "soort": "SPEC",
+          "betreft": "toerekening drempel bij meerdere verkrijgers; uitstel van betaling"
+        }
+      ],
+      "verificatie": "wettekst niet opnieuw geraadpleegd; te verifiëren"
+    },
+    {
+      "id": "C3",
+      "type": "conclusie",
+      "tekst": "Aan de voortzettingseis is voldaan: de vrijstelling wordt definitief.",
+      "onderbouwing": [
+        {
+          "soort": "SPEC"
+        }
+      ],
+      "verificatie": "open"
+    },
+    {
+      "id": "C4",
+      "type": "conclusie",
+      "tekst": "Voortzettingseis geschonden: de vrijstelling vervalt (geheel of naar evenredigheid) en de belasting wordt alsnog geheven via een aanvullende aanslag. Daarbij wordt uitgegaan van de waarde zoals die bij de oorspronkelijke verkrijging is vastgesteld.",
+      "onderbouwing": [
+        {
+          "soort": "WET",
+          "ref": "art. 35e en art. 37 lid 4 SW",
+          "kern": "Gevolgen van niet voortzetten; aanvullende aanslag."
+        },
+        {
+          "soort": "SPEC",
+          "betreft": "omvang van het verval; waardering"
+        }
+      ],
+      "verificatie": "wettekst niet opnieuw geraadpleegd; te verifiëren"
+    }
+  ]
+}

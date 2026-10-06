@@ -44,7 +44,7 @@
         },
         {
           "id": "erf-bor",
-          "titel": "Bedrijfsopvolgingsregeling"
+          "titel": "Bedrijfsopvolgingsregeling (erf- en schenkbelasting)"
         }
       ]
     }
@@ -93,6 +93,25 @@
         "art. 6:10 Awb",
         "art. 6:11 Awb",
         "art. 22j AWR"
+      ]
+    },
+    {
+      "id": "LB-003",
+      "bestand": "data/bomen/LB-003.json",
+      "onderwerp": "erf-bor",
+      "trefwoorden": [
+        "BOR",
+        "bedrijfsopvolgingsregeling",
+        "ondernemingsvermogen",
+        "aanmerkelijk belang",
+        "bezitseis",
+        "voortzettingseis",
+        "beleggingsvermogen",
+        "holding",
+        "art. 35b SW",
+        "art. 35c SW",
+        "art. 35d SW",
+        "art. 35e SW"
       ]
     }
   ]
